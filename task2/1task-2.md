@@ -457,9 +457,26 @@ css伪类是加在选择器后面的用来指定元素状态的关键字。比�
    }
 ```
 target伪类使用场景：在页面上做跳转时要显示某种状态比如章节或评论的跳转；接受浏览器的```history```；css实现tabs切换，菜单等效果。
-
-* :checked
-* :enabled
+* :checked 表示任何radio(<input type="radio">)，checkbox(<input type="checkbox">)或option HTML元素("option")在一个HTML元素("select")元素选中或链接一个状态。用户可以改变在该元素上的状态，或选择一个不同的值,这种情况下:checked伪类不再适应于这个元素但仍是有关的一个。可用```document.querySelector(':target')```获取。但是属性应用不多经测试```color```，```border```等属性不适用。
+```css
+    /*任何被选中的元素*/
+    :checked{
+        width:50px;
+        height:50px;
+    }
+    /*只能是type为radio的元素*/
+    input[type="radio"]:checked{
+        margin-left:25px;
+    }
+    /*页面上所有选中的select的选项*/
+    option:checked{
+        margin-left:10px;
+    }
+```
+应用：隐藏的的radioboxs存储一些css布尔值，label元素的妙用可以不用紧跟<input>之后
+```html
+```
+* :enabled 
 * :disabled
 
 
